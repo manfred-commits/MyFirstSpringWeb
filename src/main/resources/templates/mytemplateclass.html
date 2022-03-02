@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<style>
+		h2{
+			color:orange;
+		}
+	</style>
+	<body>
+		<p th:text="${myclass.myString}"></p>
+		<h2>Array</h2>
+		<ul>
+			<li th:each="item: ${myclass.myArray}">
+				<span th:text="${itemStat.index} + ': ' +${item}"></span>
+			</li>
+		</ul>
+		<h2>Map</h2>
+		<ul>
+		 	<li th:each="myitem: ${myclass.myMap}">
+		 		<strong>Key:</strong> <span th:text="${myitem.key}"></span> - <strong>Value:</strong> <span th:text="${myitem.value}"></span>
+		 	</li>
+		</ul>
+		
+		<p th:text="${myclass.getMyString()}">Sovrascrive il testo</p>
+		
+	</body>
+</html>
